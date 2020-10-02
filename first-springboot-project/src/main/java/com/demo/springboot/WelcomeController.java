@@ -6,11 +6,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController {
 	
+	private WelcomeService  service = new WelcomeService();
 	@RequestMapping("/welcome")
 	public String welcome() {
 		
-		return "This is Welcome Screen";
+		return service.retrieveWlcomeMessage();
 	}
 	
 
+}
+
+class WelcomeService{
+	
+	protected String retrieveWlcomeMessage() {
+		
+		//Complex Method
+		return "Good Morning"; 
+	}
 }
